@@ -30,3 +30,6 @@ def signup(request):
 
 def signin(request):
     return render(request, 'signin.html')
+
+def user_dash(request):
+    return render(request, 'user_dash.html')

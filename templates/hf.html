@@ -1,6 +1,7 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
+
+    <head>
         <meta charset="utf-8">
         <title>FemBloom</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -32,55 +33,50 @@
         <link href="{% static 'css/style.css' %}" rel="stylesheet">
     </head>
 
-<body>
-<header>
-    <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
-    <!-- Spinner End -->
+    <body>
 
-    <!-- Navbar & Hero Start -->
-    <div class="container-fluid header position-relative overflow-hidden p-0" style="background-color: white;">
-        <nav class="navbar navbar-expand-lg fixed-top navbar-light px-4 px-lg-5 py-3 py-lg-0" style="z-index: 1030;">
-            <a href="index.html" class="navbar-brand p-0">
-                <h1 class="display-6 text-primary m-0"><i class=""></i>FemBloom</h1>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="fa fa-bars"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-fluid header position-relative overflow-hidden p-0 " style="background-color: white;" >
+            <nav class="navbar navbar-expand-lg fixed-top navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <a href="index.html" class="navbar-brand p-0">
+
+                    <h1 class="display-6 text-primary m-0"><i class=""></i>FemBloom</h1>
+                    <!-- <img src="img/logo.png" alt="Logo"> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="index.html" class="nav-item nav-link active" style="color: #070d59;">Home</a>
-                    <a href="about.html" class="nav-item nav-link" style="color: #070d59;">About Us</a>
-                    <a href="modules.html" class="nav-item nav-link" style="color: #070d59;">Modules</a>
+                    <a href="{% url 'index' %}" class="nav-item nav-link active" style="color: #070d59;">Home</a>
+                    <a href="{% url 'about' %}" class="nav-item nav-link" style="color: #070d59;">About Us</a>
+                    <a href="{% url 'modules' %}" class="nav-item nav-link" style="color: #070d59;">Modules</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color: #070d59;">Others</a>
                         <div class="dropdown-menu m-0">
-                            <a href="feature.html" class="dropdown-item" style="color: #070d59;">Features</a>
+                            <a href="{% url 'feature' %}" class="dropdown-item" style="color: #070d59;">Features</a>
                             <a href="pricing.html" class="dropdown-item" style="color: #070d59;">Donations</a>
-                            <a href="blog.html" class="dropdown-item" style="color: #070d59;">Blog</a>
-                            <a href="testimonial.html" class="dropdown-item" style="color: #070d59;">Testimonial</a>
-                            <a href="404.html" class="dropdown-item" style="color: #070d59;">404 Page</a>
+                            <a href="{% url 'blog' %}" class="dropdown-item" style="color: #070d59;">Blog</a>
+                            <a href="{% url 'testimonial' %}" class="dropdown-item" style="color: #070d59;">Testimonial</a>
+                            <a href="#" class="dropdown-item" style="color: #070d59;">404 Page</a>
                         </div>
                     </div>
-                    <a href="contact.html" class="nav-item nav-link">Contact Us</a>
-                </div>
-                <a href="#" class="btn btn-light border border-primary rounded-pill text-primary py-2 px-4 me-4">Log In</a>
-                <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4">Sign Up</a>
-            </div>
-        </nav>
 
-        <!-- Hero Header Start -->
-        <div class="hero-header overflow-hidden px-5" style="padding-top: 90px;"> <!-- Adjust padding-top to avoid overlap with fixed navbar -->
-            <!-- Content can be added here later -->
-        </div>
-        <!-- Hero Header End -->
-    </div>
-    <!-- Navbar & Hero End -->
-</header>
+                        <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+                    </div>
+                    <a href="{% url 'signin' %}" class="btn btn-light border border-primary rounded-pill text-primary py-2 px-4 me-4">Log In</a>
+                    <a href="{% url 'signup' %}" class="btn btn-primary rounded-pill text-white py-2 px-4">Sign Up</a>
+                </div>
+            </nav>
 
 
 
@@ -91,18 +87,19 @@
              </main>
 
 
-  <!-- Footer Start -->
+
+        <!-- Footer Start -->
         <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
             <div class="container py-5">
                 <div class="row g-5">
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
                             <h4 class="text-dark mb-4">Company</h4>
-                            <a href=""> Why Mailler?</a>
+                            <a href=""> Why FemBloom?</a>
                             <a href=""> Our Features</a>
                             <a href=""> Our Portfolio</a>
                             <a href=""> About Us</a>
-                            <a href=""> Our Blog & News</a>
+                            <a href=""> Blogs & News</a>
                             <a href=""> Get In Touch</a>
                         </div>
                     </div>
@@ -113,13 +110,13 @@
                             <a href=""> Contact Us</a>
                             <a href=""> Privacy Policy</a>
                             <a href=""> Terms & Conditions</a>
-                            <a href=""> Our Blog & News</a>
+                            <a href=""> Blogs & News</a>
                             <a href=""> Our Team</a>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-dark">Services</h4>
+                            <h4 class="mb-4 text-dark">Common modules</h4>
                             <a href=""> All Services</a>
                             <a href=""> Promotional Emails</a>
                             <a href=""> Product Updates</a>
@@ -186,8 +183,7 @@
 
     <!-- Template Javascript -->
     <script src="{% static 'js/main.js' %}"></script>
+        </div>
+    </body>
 
-
-
-</body>
 </html>
