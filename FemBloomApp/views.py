@@ -33,3 +33,5 @@ def signin(request):
 
 def user_dash(request):
     return render(request, 'user_dash.html')
+
+
