@@ -1,0 +1,2 @@
+*.py linguist-detectable=true
+*.scss linguist-detectable=false
