@@ -59,7 +59,7 @@
         <div class="row g-5 pt-5" style="margin-top: 6rem;">
             <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
                 <div class="feature-img RotateMoveLeft h-100" style="object-fit: cover;">
-                    <img src="{% static 'img/features-1.png' %}" class="img-fluid w-100 h-100" alt="Health Resources Image">
+                    <img src="{% static 'img/logo-removebg-preview (1).png' %}" class="img-fluid w-100 h-100" alt="Health Resources Image">
                 </div>
             </div>
             <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.1s">
@@ -114,14 +114,14 @@
                     <div class="text-center p-4">
                         <div class="d-inline-block rounded bg-light p-4 mb-4"><i class="fas fa-donate fa-5x text-secondary"></i></div>
                         <div class="feature-content">
-                            <a href="#" class="h4">Donate Now <i class="fa fa-long-arrow-alt-right"></i></a>
+                            <a href="{% url 'donation' %}" class="h4">Donate Now <i class="fa fa-long-arrow-alt-right"></i></a>
                             <p class="mt-4 mb-0">Contribute to our mission and help us make a lasting impact on women’s health and rights.</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="text-center my-4">
-                <a href="#" class="btn btn-success rounded-pill py-3 px-5">Donate Today</a>
+                <a href="{% url 'donation' %}" class="btn btn-success rounded-pill py-3 px-5">Donate Today</a>
             </div>
         </div>
         <!-- Donations Section End -->

@@ -62,7 +62,6 @@ def sponsorevents(request):
     return render(request, 'sponsorevents.html')
 
 
-
 def quiz_detail(request, quiz_id):
     quiz = get_object_or_404(Quiz, id=quiz_id)
     questions = quiz.questions.prefetch_related('options').all()
