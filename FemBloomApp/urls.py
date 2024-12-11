@@ -16,4 +16,10 @@ urlpatterns = [
     path('signup', views.signup, name='signup'),
     path('signin', views.signin, name='signin'),
     path('user_dash', views.user_dash, name='user_dash'),
+    path('quiz/<int:quiz_id>/', views.quiz_detail, name='quiz_detail'),
+    path('quiz_result', views.user_dash, name='quiz_result'),
+    path('donation', views.donation, name='donation'),
+    path('donatemoney', views.donatemoney, name='donatemoney'),
+    path('donateproducts', views.donateproducts, name='donateproducts'),
+    path('sponsorevents', views.sponsorevents, name='sponsorevents'),
 ]

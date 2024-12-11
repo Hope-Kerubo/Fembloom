@@ -1,4 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
+from .models import Quiz, Question
+from .forms import QuizForm
+from FemBloomApp.models import Signup
+
 
 # Create your views here.
 def index(request):
@@ -26,7 +30,18 @@ def hf(request):
     return render(request, 'hf.html')
 
 def signup(request):
-    return render(request, 'signup.html')
+    if request.method == 'POST':
+        mysignup=Signup(
+            Fullname=request.POST['fullname'],
+            EmailAddress=request.POST['email'],
+            Password=request.POST['password'],
+            ConfirmPassword=request.POST['confirm-password'],
+        )
+        mysignup.save()
+        return redirect('/signin')
+    else:
+        return render(request, 'signup.html')
+
 
 def signin(request):
     return render(request, 'signin.html')
@@ -34,10 +49,18 @@ def signin(request):
 def user_dash(request):
     return render(request, 'user_dash.html')
 
+def donation(request):
+    return render(request, 'donation.html')
 
-from django.shortcuts import render, get_object_or_404
-from .models import Quiz, Question
-from .forms import QuizForm
+def donatemoney(request):
+    return render(request, 'donatemoney.html')
+
+def donateproducts(request):
+    return render(request, 'donateproducts.html')
+
+def sponsorevents(request):
+    return render(request, 'sponsorevents.html')
+
 
 
 def quiz_detail(request, quiz_id):
@@ -56,6 +79,9 @@ def quiz_detail(request, quiz_id):
                 if set(selected_option_ids) == set(correct_option_ids):
                     score += 1
 
+            print(f"Quiz: {quiz.title}")
+            print(f"Questions: {questions}")
+
             return render(request, 'quiz_result.html', {
                 'quiz': quiz,
                 'score': score,
@@ -65,6 +91,8 @@ def quiz_detail(request, quiz_id):
         form = QuizForm(questions=questions)
 
     return render(request, 'quiz_detail.html', {'quiz': quiz, 'form': form})
+
+
 
 
 

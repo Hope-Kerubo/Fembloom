@@ -1,0 +1,79 @@
+{%  extends 'hf.html'  %}
+{% load static %}
+
+
+{% block body %}
+
+<!-- Donations Start -->
+<div class="container-fluid donation py-5">
+    <div class="container py-5">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
+            <h4 class="text-primary">Make a Difference</h4>
+            <h1 class="display-5 mb-4">Donate to Support Schools or Hospitals</h1>
+            <p class="mb-0">
+                Your contributions can help provide menstrual hygiene products or financial support to those in need. Join us in making a meaningful impact on lives today.
+            </p>
+        </div>
+        <div class="row g-5 justify-content-center">
+            <!-- Option 1: Donate Menstrual Products -->
+            <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="donation-item bg-light rounded text-center">
+                    <div class="text-center text-dark border-bottom d-flex flex-column justify-content-center p-4" style="width: 100%; height: 160px;">
+                        <p class="fs-2 fw-bold text-uppercase text-primary mb-0">Donate Menstrual Products</p>
+                    </div>
+                    <div class="text-start p-5">
+                        <p><i class="fas fa-check text-success me-1"></i> Sanitary Pads</p>
+                        <p><i class="fas fa-check text-success me-1"></i> Tampons</p>
+                        <p><i class="fas fa-check text-success me-1"></i> Menstrual Cups</p>
+                        <p><i class="fas fa-check text-success me-1"></i> Hygiene Kits</p>
+                        <p><i class="fas fa-check text-success me-1"></i> Delivery to Schools or Hospitals</p>
+                        <a href="{% url 'donateproducts' %}">
+                            <button class="btn btn-light rounded-pill py-2 px-5" type="button">Donate Products</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Option 2: Donate Financially -->
+            <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="donation-item bg-light rounded text-center">
+                    <div class="text-center text-primary border-bottom d-flex flex-column justify-content-center p-4" style="width: 100%; height: 160px;">
+                        <p class="fs-2 fw-bold text-uppercase mb-0">Donate Money</p>
+                    </div>
+                    <div class="text-start p-5">
+                        <p><i class="fas fa-check text-success me-1"></i> Support Hygiene Education</p>
+                        <p><i class="fas fa-check text-success me-1"></i> Provide Supplies to Schools</p>
+                        <p><i class="fas fa-check text-success me-1"></i> Aid Local Hospitals</p>
+                        <p><i class="fas fa-check text-success me-1"></i> Empower Girls and Women</p>
+                        <p><i class="fas fa-check text-success me-1"></i> Transparent Allocation of Funds</p>
+                        <a href="{% url 'donatemoney' %}">
+                            <button class="btn btn-light rounded-pill py-2 px-5" type="button">Donate Money</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Option 3: Sponsor a Program -->
+            <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="donation-item bg-light rounded text-center">
+                    <div class="text-center text-secondary border-bottom d-flex flex-column justify-content-center p-4" style="width: 100%; height: 160px;">
+                        <p class="fs-2 fw-bold text-uppercase text-primary mb-0">Sponsor a Program</p>
+                    </div>
+                    <div class="text-start p-5">
+                        <p><i class="fas fa-check text-success me-1"></i> Host Awareness Workshops</p>
+                        <p><i class="fas fa-check text-success me-1"></i> Fund Infrastructure Improvements</p>
+                        <p><i class="fas fa-check text-success me-1"></i> Partner with Schools</p>
+                        <p><i class="fas fa-check text-success me-1"></i> Enable Long-term Impact</p>
+                        <p><i class="fas fa-check text-success me-1"></i> Collaborate with Communities</p>
+                        <a href="{% url 'sponsorevents' %}">
+                            <button class="btn btn-light rounded-pill py-2 px-5" type="button">Sponsor Now</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Donations End -->
+
+{% endblock %}
