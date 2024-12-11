@@ -61,6 +61,21 @@ def donateproducts(request):
 def sponsorevents(request):
     return render(request, 'sponsorevents.html')
 
+def selection(request):
+    return render(request, 'selection.html')
+
+def m1(request):
+    return render(request, 'm1.html')
+
+def m2(request):
+    return render(request, 'm2.html')
+
+def m3(request):
+    return render(request, 'm3.html')
+
+def m4(request):
+    return render(request, 'm4.html')
+
 
 def quiz_detail(request, quiz_id):
     quiz = get_object_or_404(Quiz, id=quiz_id)

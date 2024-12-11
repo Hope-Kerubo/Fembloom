@@ -1,0 +1,75 @@
+{% extends 'hf.html' %}
+{% load static %}
+
+{% block body %}
+
+<div class="container py-5" style="background-color: #fbeaf1; border-radius: 10px; margin-top: 75px">
+    <div class="text-center mb-4">
+        <h1 class="display-4 pb-2" style="color: #e63946; font-weight: bold;">Understanding Reproductive System Health</h1>
+        <p class="lead" style="color: #6a0572;">An overview of how the reproductive system functions and the importance of maintaining its health through regular checkups and screenings.</p>
+    </div>
+
+    <div class="row gy-4">
+        <div class="col-md-12">
+            <div class="card h-100 shadow-sm" style="border: none;">
+                <div class="card-body" style="background-color: #ffffff; border-radius: 10px;">
+                    <h2 style="color: #e63946;">The Functioning of the Reproductive System</h2>
+                    <p>The reproductive system is vital for the creation of life. It consists of various organs, each playing a crucial role in processes like ovulation, fertilization, and childbirth. Key organs include the ovaries, fallopian tubes, uterus, and vagina in females, and the testes, vas deferens, and penis in males.</p>
+
+                    <p><strong>Did you know?</strong> The ovaries contain all the eggs a person will ever have from birth, and these are released one at a time during ovulation.</p>
+
+                    <h3 style="color: #6a0572;">Key Functions:</h3>
+                    <ul>
+                        <li>Production of reproductive cells (eggs and sperm).</li>
+                        <li>Secretion of hormones such as estrogen, progesterone, and testosterone.</li>
+                        <li>Facilitating fertilization and supporting pregnancy.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="card h-100 shadow-sm" style="border: none;">
+                <div class="card-body" style="background-color: #ffffff; border-radius: 10px;">
+                    <h2 style="color: #e63946;">Maintaining Reproductive Health</h2>
+                    <p>Reproductive health goes beyond the absence of disease—it involves a state of complete physical, mental, and social well-being in all matters relating to the reproductive system. Here are some essential steps:</p>
+
+                    <h3 style="color: #6a0572;">1. Regular Checkups</h3>
+                    <p>Routine visits to a gynecologist or urologist are crucial for early detection of potential issues, such as infections, hormonal imbalances, or abnormalities.</p>
+
+                    <h3 style="color: #6a0572;">2. Safe Practices</h3>
+                    <p>Using protection during intercourse helps prevent sexually transmitted infections (STIs) and unwanted pregnancies.</p>
+
+                    <h3 style="color: #6a0572;">3. Balanced Nutrition</h3>
+                    <p>A diet rich in vitamins, minerals, and antioxidants supports hormonal balance and overall reproductive health. Foods like leafy greens, nuts, and fish are particularly beneficial.</p>
+
+                    <h3 style="color: #6a0572;">4. Staying Active</h3>
+                    <p>Regular exercise improves blood circulation, reduces stress, and maintains a healthy weight, all of which are important for reproductive health.</p>
+
+                    <h3 style="color: #6a0572;">5. Screenings and Vaccinations</h3>
+                    <p>Screening for conditions like cervical cancer and getting vaccinated against HPV can significantly reduce risks associated with reproductive health issues.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Section -->
+    <div class="text-center mt-5">
+        <h3 style="color: #e63946;">Learn More: Understanding Reproductive Health</h3>
+        <video controls style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
+            <source src="{% static 'videos/reproductive_health.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag. You can download the video <a href="{% static 'videos/reproductive_health.mp4' %}">here</a>.
+        </video>
+        <p style="color: #6a0572; font-size: 14px;">This video offers a detailed explanation of the reproductive system and tips for maintaining its health.</p>
+    </div>
+
+    <div class="text-center mt-5">
+        <a href="/take-quiz" class="btn btn-success rounded-pill py-2 px-4">Take the Quiz</a>
+    </div>
+
+    <div class="mt-4" style="color: #6a0572; font-size: 14px;">
+        <p><strong>Source:</strong> Information compiled from medical journals, WHO guidelines, and expert reproductive health resources. Learn more at <a href="https://www.reproductivehealth.org" target="_blank">www.reproductivehealth.org</a>.</p>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends 'hf.html' %}
+{% load static %}
+
+{% block body %}
+
+<div class="container py-5" style="background-color: #fbeaf1; border-radius: 10px; margin-top: 75px; padding-bottom: 40px;">
+    <div class="text-center mb-5">
+        <h1 class="display-4" style="color: #e63946; font-weight: bold; font-family: 'Poppins', sans-serif; letter-spacing: 1px;">Nutrition and Its Role in Reproductive Health</h1>
+        <p class="lead" style="color: #6a0572; font-size: 1.1rem; font-family: 'Lora', serif; font-weight: 400;">Understanding how a balanced diet supports hormonal health, fertility, and overall well-being. Learn the importance of essential nutrients in promoting a healthy reproductive system.</p>
+    </div>
+
+    <div class="row gy-5">
+        <!-- Section: The Connection Between Nutrition and Reproductive Health -->
+        <div class="col-md-12">
+            <div class="card h-100 shadow-lg border-0 rounded-3" style="background-color: #ffffff;">
+                <div class="card-body" style="padding: 30px; border-radius: 15px;">
+                    <h2 style="color: #e63946; font-size: 1.8rem; margin-bottom: 20px; font-family: 'Poppins', sans-serif;">The Connection Between Nutrition and Reproductive Health</h2>
+                    <p style="font-size: 1.1rem; color: #6a0572; font-family: 'Lora', serif; line-height: 1.6;">A balanced diet plays a critical role in maintaining hormonal health and fertility. Proper nutrition supports the body's functions, helps regulate hormones, and can improve fertility outcomes. Certain vitamins, minerals, and other nutrients are essential for the proper functioning of the reproductive system.</p>
+
+                    <p><strong style="color: #e63946;">Did you know?</strong> Nutrient deficiencies, such as lack of folate or vitamin D, can affect reproductive health, leading to complications like infertility or hormonal imbalances.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section: Key Nutrients for Reproductive Health -->
+        <div class="col-md-12 mt-5">
+            <div class="card h-100 shadow-lg border-0 rounded-3" style="background-color: #ffffff;">
+                <div class="card-body" style="padding: 30px; border-radius: 15px;">
+                    <h3 style="color: #6a0572; font-size: 1.6rem; margin-bottom: 20px; font-family: 'Poppins', sans-serif;">Key Nutrients for Reproductive Health</h3>
+                    <ul style="font-size: 1.1rem; color: #6a0572; font-family: 'Lora', serif; line-height: 1.6;">
+                        <li><strong style="color: #e63946;">Folate:</strong> Essential for fertility and the early stages of pregnancy, folate helps reduce the risk of neural tube defects.</li>
+                        <li><strong style="color: #e63946;">Vitamin D:</strong> Crucial for hormone regulation, vitamin D can improve fertility and support healthy pregnancy outcomes.</li>
+                        <li><strong style="color: #e63946;">Omega-3 Fatty Acids:</strong> These healthy fats help regulate hormone production and support the health of the ovaries and testes.</li>
+                        <li><strong style="color: #e63946;">Zinc:</strong> Zinc supports the production of both male and female reproductive cells and can improve sperm quality in men.</li>
+                        <li><strong style="color: #e63946;">Iron:</strong> Iron-rich foods help prevent anemia and ensure healthy blood flow, which is important for fertility and pregnancy health.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section: Maintaining a Balanced Diet -->
+        <div class="col-md-12 mt-5">
+            <div class="card h-100 shadow-lg border-0 rounded-3" style="background-color: #ffffff;">
+                <div class="card-body" style="padding: 30px; border-radius: 15px;">
+                    <h3 style="color: #6a0572; font-size: 1.6rem; margin-bottom: 20px; font-family: 'Poppins', sans-serif;">Maintaining a Balanced Diet</h3>
+                    <p style="font-size: 1.1rem; color: #6a0572; font-family: 'Lora', serif; line-height: 1.6;">To support reproductive health, it is important to incorporate a variety of nutrient-dense foods into your daily diet. A well-rounded diet that includes fruits, vegetables, lean proteins, whole grains, and healthy fats is essential for optimal health.</p>
+
+                    <h4 style="color: #e63946; font-size: 1.4rem; font-family: 'Poppins', sans-serif;">Healthy Eating Tips:</h4>
+                    <ul style="font-size: 1.1rem; color: #6a0572; font-family: 'Lora', serif; line-height: 1.6;">
+                        <li><strong style="color: #e63946;">Eat a variety of colorful fruits and vegetables:</strong> This ensures you get a broad range of vitamins and antioxidants.</li>
+                        <li><strong style="color: #e63946;">Incorporate healthy fats:</strong> Foods like avocados, nuts, and fish support hormone production.</li>
+                        <li><strong style="color: #e63946;">Choose whole grains:</strong> They help maintain stable blood sugar levels and hormonal balance.</li>
+                        <li><strong style="color: #e63946;">Stay hydrated:</strong> Drinking water supports cellular health and overall bodily functions.</li>
+                        <li><strong style="color: #e63946;">Consider supplementation:</strong> If you're deficient, consult a healthcare provider for folate, vitamin D, or omega-3s.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Section -->
+    <div class="text-center mt-5">
+        <h3 style="color: #e63946; font-size: 1.6rem; font-family: 'Poppins', sans-serif; margin-bottom: 20px;">Learn More: Nutrition and Reproductive Health</h3>
+        <video controls style="max-width: 100%; border-radius: 15px; margin: 20px 0;">
+            <source src="{% static 'videos/nutrition_reproductive_health.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag. You can download the video <a href="{% static 'videos/nutrition_reproductive_health.mp4' %}">here</a>.
+        </video>
+        <p style="color: #6a0572; font-size: 14px; font-family: 'Lora', serif;">This video explains how a balanced diet can improve reproductive health and fertility.</p>
+    </div>
+
+    <div class="text-center mt-5">
+        <a href="/take-quiz" class="btn btn-danger rounded-pill py-2 px-4" style="font-size: 1.1rem; background-color: #e63946; border-color: #e63946; transition: background-color 0.3s ease;">Take the Quiz</a>
+    </div>
+
+    <div class="mt-4 text-center" style="color: #6a0572; font-size: 14px;">
+        <p><strong>Source:</strong> Information compiled from nutrition experts, medical journals, and health organizations. Learn more at <a href="https://www.nutrition.org" target="_blank" style="color: #e63946; text-decoration: none;">www.nutrition.org</a>.</p>
+    </div>
+</div>
+
+{% endblock %}

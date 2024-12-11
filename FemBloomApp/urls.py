@@ -22,4 +22,9 @@ urlpatterns = [
     path('donatemoney', views.donatemoney, name='donatemoney'),
     path('donateproducts', views.donateproducts, name='donateproducts'),
     path('sponsorevents', views.sponsorevents, name='sponsorevents'),
+    path('selection', views.selection, name='selection'),
+    path('m1', views.m1, name='m1'),
+    path('m2', views.m2, name='m2'),
+    path('m3', views.m3, name='m3'),
+    path('m4', views.m4, name='m4'),
 ]

@@ -1,0 +1,89 @@
+{% extends 'hf.html' %}
+{% load static %}
+
+{% block body %}
+
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold mt-5">Donate to Schools and Hospitals</h1>
+        <p class="lead">Select a County and a School or Hospital to contribute towards their improvement.</p>
+    </div>
+
+    <!-- Donation Form -->
+    <form action="submit-donation.php" method="POST" class="shadow p-4 rounded bg-light">
+        <div class="row g-3">
+            <!-- County Dropdown -->
+            <div class="col-md-6">
+                <label for="county" class="form-label">Select County</label>
+                <select class="form-select" id="county" name="county" onchange="updateLocations()" required>
+                    <option value="">Choose a County</option>
+                    <option value="Nairobi">Nairobi</option>
+                    <option value="Mombasa">Mombasa</option>
+                    <option value="Kisumu">Kisumu</option>
+                    <option value="Nakuru">Nakuru</option>
+                    <option value="Eldoret">Eldoret</option>
+                    <option value="Thika">Thika</option>
+                    <option value="Machakos">Machakos</option>
+                    <option value="Nyeri">Nyeri</option>
+                    <option value="Meru">Meru</option>
+                    <option value="Kericho">Kericho</option>
+                </select>
+            </div>
+
+            <!-- School/Hospital Dropdown -->
+            <div class="col-md-6">
+                <label for="location" class="form-label">Select School/Hospital</label>
+                <select class="form-select" id="location" name="location" required>
+                    <option value="">Choose a School/Hospital</option>
+                    <!-- Locations will be dynamically updated based on county selection -->
+                </select>
+            </div>
+        </div>
+
+        <!-- Donation Button -->
+        <div class="text-center mt-4">
+            <button type="submit" class="btn btn-primary rounded-pill py-2 px-5">Donate Now</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    // Sample data for schools and hospitals by county
+    const locations = {
+        Nairobi: ['Nairobi Hospital', 'Kenya National Hospital', 'St. Mary’s School'],
+        Mombasa: ['Coast General Hospital', 'Mombasa Primary School', 'Mombasa High School'],
+        Kisumu: ['Kisumu General Hospital', 'Kisumu Primary School', 'Jomo Kenyatta High School'],
+        Nakuru: ['Nakuru Provincial Hospital', 'St. Francis School', 'Nakuru High School'],
+        Eldoret: ['Moi Teaching and Referral Hospital', 'Eldoret Primary School', 'Uasin Gishu High School'],
+        Thika: ['Thika Level 5 Hospital', 'Thika High School', 'Juja Preparatory School'],
+        Machakos: ['Machakos General Hospital', 'Machakos School for the Deaf', 'Machakos Academy'],
+        Nyeri: ['Nyeri Provincial General Hospital', 'Nyeri Primary School', 'Chinga Boys High School'],
+        Meru: ['Meru Teaching and Referral Hospital', 'Kaaga Girls High School', 'Meru School'],
+        Kericho: ['Kericho County Hospital', 'Kericho Primary School', 'Kericho Boys High School']
+    };
+
+    // Update the location dropdown based on selected county
+    function updateLocations() {
+        const county = document.getElementById("county").value;
+        const locationDropdown = document.getElementById("location");
+
+        // Clear existing options
+        locationDropdown.innerHTML = '<option value="">Choose a School/Hospital</option>';
+
+        // Add new options based on selected county
+        if (county && locations[county]) {
+            locations[county].forEach(location => {
+                const option = document.createElement("option");
+                option.value = location;
+                option.textContent = location;
+                locationDropdown.appendChild(option);
+            });
+        }
+    }
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+{% endblock %}

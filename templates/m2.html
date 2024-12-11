@@ -1,0 +1,85 @@
+{% extends 'hf.html' %}
+{% load static %}
+
+{% block body %}
+
+<div class="container py-5" style="background-color: #fbeaf1; border-radius: 10px; margin-top: 75px">
+    <div class="text-center mb-4">
+        <h1 class="display-4 pb-4" style="color: #e63946; font-weight: bold;">Managing Periods: Products and Choices</h1>
+        <p class="lead" style="color: #6a0572;">Detailed insights into the various menstrual products available, their pros and cons, and tips for choosing the right product for your lifestyle and needs.</p>
+    </div>
+
+    <div class="row gy-4">
+        <!-- Pads -->
+        <div class="col-md-6">
+            <div class="card h-100 shadow-sm" style="border: none;">
+                <div class="card-body" style="background-color: #ffffff; border-radius: 10px;">
+                    <h2 class="card-title" style="color: #e63946;">Pads</h2>
+                    <p class="card-text">Pads are external products that come in various sizes and absorbencies. They are easy to use and widely available, making them a popular choice.</p>
+                    <p>Available in disposable and reusable forms, pads are perfect for beginners or those who prefer non-invasive products. Modern pads are designed to be ultra-thin while maintaining high absorbency, ensuring comfort throughout the day.</p>
+                    <p><strong>Pros:</strong> Convenient, no risk of internal insertion. <br><strong>Cons:</strong> Can feel bulky, generates waste.</p>
+                    <button class="btn btn-info mt-3" onclick="alert('Tip: Opt for biodegradable pads to reduce environmental impact.')">Eco Tip</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tampons -->
+        <div class="col-md-6">
+            <div class="card h-100 shadow-sm" style="border: none;">
+                <div class="card-body" style="background-color: #ffffff; border-radius: 10px;">
+                    <h2 class="card-title" style="color: #e63946;">Tampons</h2>
+                    <p class="card-text">Tampons are inserted into the vagina to absorb menstrual flow. They are discreet and great for active lifestyles, such as swimming or sports.</p>
+                    <p>With options like applicator and non-applicator tampons, you can choose what suits your comfort. They are available in varying absorbency levels, catering to light and heavy flow days.</p>
+                    <p><strong>Pros:</strong> Comfortable for physical activity. <br><strong>Cons:</strong> Requires proper insertion; risk of Toxic Shock Syndrome (TSS) if not used correctly.</p>
+                    <button class="btn btn-info mt-3" onclick="alert('Reminder: Change tampons every 4-8 hours to prevent infections.')">Safety Reminder</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menstrual Cups -->
+        <div class="col-md-6">
+            <div class="card h-100 shadow-sm" style="border: none;">
+                <div class="card-body" style="background-color: #ffffff; border-radius: 10px;">
+                    <h2 class="card-title" style="color: #e63946;">Menstrual Cups</h2>
+                    <p class="card-text">Menstrual cups are reusable silicone or rubber cups inserted into the vagina to collect menstrual flow. They are eco-friendly and cost-effective in the long run.</p>
+                    <p>Designed to last for years, menstrual cups are ideal for individuals seeking sustainable options. Once inserted, they can be worn for up to 12 hours, providing all-day protection and comfort.</p>
+                    <p><strong>Pros:</strong> Reusable, minimal waste. <br><strong>Cons:</strong> Initial learning curve for insertion and removal.</p>
+                    <button class="btn btn-info mt-3" onclick="alert('Tip: Sterilize your menstrual cup between cycles for hygiene.')">Hygiene Tip</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Period Underwear -->
+        <div class="col-md-6">
+            <div class="card h-100 shadow-sm" style="border: none;">
+                <div class="card-body" style="background-color: #ffffff; border-radius: 10px;">
+                    <h2 class="card-title" style="color: #e63946;">Period Underwear</h2>
+                    <p class="card-text">Period underwear is designed to absorb menstrual flow like a pad but is washable and reusable. It is ideal for light flow days or as backup protection.</p>
+                    <p>Available in various styles, such as bikini and high-waist, period underwear combines functionality and fashion. Advanced fabric technology ensures they remain leak-proof while being breathable and comfortable.</p>
+                    <p><strong>Pros:</strong> Comfortable, eco-friendly. <br><strong>Cons:</strong> Requires frequent washing, less effective for heavy flow.</p>
+                    <button class="btn btn-info mt-3" onclick="alert('Fact: Period underwear can last up to 2 years with proper care.')">Sustainability Insight</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt-5">
+    <h3 style="color: #e63946;">Learn How to Use a Pad</h3>
+    <video controls style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
+        <source src="{% static 'videos/how-to-put-on-a-pad.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag. You can download the video <a href="{% static 'videos/how-to-put-on-a-pad.mp4' %}">here</a>.
+    </video>
+    <p style="color: #6a0572; font-size: 14px;">This video provides a step-by-step guide to using pads effectively and hygienically.</p>
+</div>
+
+
+    <div class="text-center mt-5">
+        <a href="/take-quiz" class="btn btn-success rounded-pill py-2 px-4">Take the Quiz</a>
+    </div>
+
+    <div class="mt-4" style="color: #6a0572; font-size: 14px;">
+        <p><strong>Source:</strong> Information gathered from reliable health and wellness resources, including medical journals and menstrual product manufacturers. Learn more at <a href="https://www.menstrualproductguide.org" target="_blank">www.menstrualproductguide.org</a>.</p>
+    </div>
+
+</div>
+
+{% endblock %}
