@@ -3,7 +3,7 @@
 
 {% block body %}
 
-<div class="container py-5 " style="background-color: #fbeaf1; border-radius: 10px; margin-top: 75px">
+<div class="container py-5" style="background-color: #fbeaf1; border-radius: 10px; margin-top: 75px">
     <div class="text-center mb-4">
         <h1 class="display-4 pb-4" style="color: #e63946; font-weight: bold;">Understanding Your Circle: Phases and Changes</h1>
         <p class="lead" style="color: #6a0572;">A comprehensive guide to the phases of the menstrual cycle—menstrual, follicular, ovulatory, and luteal—explaining the physical and hormonal changes at each stage.</p>
@@ -15,14 +15,15 @@
             <div class="card h-100 shadow-sm" style="border: none;">
                 <div class="card-body" style="background-color: #ffffff; border-radius: 10px;">
                     <h2 class="card-title" style="color: #e63946;">Menstrual Phase</h2>
-                    <p class="card-text">This is the start of the cycle, marked by the shedding of the uterine lining. It lasts about 3-7 days. Hormone levels, particularly estrogen and progesterone, are low.</p>
+                    <p class="card-text" id="menstrual-phase-text">This is the start of the cycle, marked by the shedding of the uterine lining. It lasts about 3-7 days. Hormone levels, particularly estrogen and progesterone, are low.</p>
                     <p>Activities you can do during this phase:</p>
-                    <ul>
+                    <ul id="menstrual-activities">
                         <li>Gentle yoga or stretching exercises.</li>
                         <li>Journaling or reflecting on your emotions.</li>
                         <li>Ensuring proper hydration and nutrition.</li>
                     </ul>
                     <button class="btn btn-info mt-3" onclick="alert('Tip: Use a period tracker to monitor your cycle.')">Cycle Tip</button>
+                    <button class="btn btn-primary mt-3" onclick="speakText('menstrual-phase-text', 'menstrual-activities')">Read Aloud</button>
                 </div>
             </div>
         </div>
@@ -32,14 +33,15 @@
             <div class="card h-100 shadow-sm" style="border: none;">
                 <div class="card-body" style="background-color: #ffffff; border-radius: 10px;">
                     <h2 class="card-title" style="color: #e63946;">Follicular Phase</h2>
-                    <p class="card-text">Following menstruation, the body prepares an egg for ovulation. Estrogen levels rise, promoting the growth of the uterine lining. This phase ends with ovulation.</p>
+                    <p class="card-text" id="follicular-phase-text">Following menstruation, the body prepares an egg for ovulation. Estrogen levels rise, promoting the growth of the uterine lining. This phase ends with ovulation.</p>
                     <p>How to make the most of this phase:</p>
-                    <ul>
+                    <ul id="follicular-activities">
                         <li>Engage in high-energy activities like cardio workouts.</li>
                         <li>Plan and set goals for the upcoming weeks.</li>
                         <li>Incorporate fresh fruits and vegetables into your diet.</li>
                     </ul>
                     <button class="btn btn-info mt-3" onclick="alert('Fact: Estrogen boosts your mood and energy levels during this phase.')">Did You Know?</button>
+                    <button class="btn btn-primary mt-3" onclick="speakText('follicular-phase-text', 'follicular-activities')">Read Aloud</button>
                 </div>
             </div>
         </div>
@@ -49,14 +51,15 @@
             <div class="card h-100 shadow-sm" style="border: none;">
                 <div class="card-body" style="background-color: #ffffff; border-radius: 10px;">
                     <h2 class="card-title" style="color: #e63946;">Ovulatory Phase</h2>
-                    <p class="card-text">This is the midpoint of the cycle when the ovary releases a mature egg. Hormones like LH surge to trigger ovulation. This phase is key for those tracking fertility.</p>
+                    <p class="card-text" id="ovulatory-phase-text">This is the midpoint of the cycle when the ovary releases a mature egg. Hormones like LH surge to trigger ovulation. This phase is key for those tracking fertility.</p>
                     <p>Suggestions for this phase:</p>
-                    <ul>
+                    <ul id="ovulatory-activities">
                         <li>Try social activities and connect with others.</li>
                         <li>Focus on strength training and core workouts.</li>
                         <li>Maintain a balanced diet to support your energy levels.</li>
                     </ul>
                     <button class="btn btn-info mt-3" onclick="alert('Tip: Ovulation is the best time to track fertility if planning pregnancy.')">Fertility Insight</button>
+                    <button class="btn btn-primary mt-3" onclick="speakText('ovulatory-phase-text', 'ovulatory-activities')">Read Aloud</button>
                 </div>
             </div>
         </div>
@@ -66,27 +69,28 @@
             <div class="card h-100 shadow-sm" style="border: none;">
                 <div class="card-body" style="background-color: #ffffff; border-radius: 10px;">
                     <h2 class="card-title" style="color: #e63946;">Luteal Phase</h2>
-                    <p class="card-text">Post-ovulation, the body prepares for a potential pregnancy. Progesterone levels rise, and symptoms like bloating or mood changes might occur. This phase ends with the next menstrual cycle.</p>
+                    <p class="card-text" id="luteal-phase-text">Post-ovulation, the body prepares for a potential pregnancy. Progesterone levels rise, and symptoms like bloating or mood changes might occur. This phase ends with the next menstrual cycle.</p>
                     <p>Self-care tips for this phase:</p>
-                    <ul>
+                    <ul id="luteal-activities">
                         <li>Practice relaxation techniques such as meditation.</li>
                         <li>Focus on consuming magnesium-rich foods.</li>
                         <li>Prioritize good sleep hygiene.</li>
                     </ul>
                     <button class="btn btn-info mt-3" onclick="alert('Self-Care Tip: Listen to your body and rest when needed.')">Self-Care Reminder</button>
+                    <button class="btn btn-primary mt-3" onclick="speakText('luteal-phase-text', 'luteal-activities')">Read Aloud</button>
                 </div>
             </div>
         </div>
     </div>
-     <div class="text-center mt-5">
+
+    <div class="text-center mt-5">
         <h3 style="color: #e63946;">Learn How to Use a Pad</h3>
         <video controls style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
             <source src="{% static 'videos/how-to-put-on-a-pad.mp4' %}" type="video/mp4">
             Your browser does not support the video tag. You can download the video <a href="{% static 'videos/how-to-put-on-a-pad.mp4' %}">here</a>.
         </video>
         <p style="color: #6a0572; font-size: 14px;">This video provides a step-by-step guide to using pads effectively and hygienically.</p>
-     </div>
-
+    </div>
 
     <div class="text-center mt-5">
         <a href="/take-quiz" class="btn btn-success rounded-pill py-2 px-4">Take the Quiz</a>
@@ -97,5 +101,21 @@
     </div>
 
 </div>
+
+<!-- Text-to-Speech Script -->
+<script>
+    function speakText(textElementId, activitiesElementId) {
+        const text = document.getElementById(textElementId).innerText;
+        const activities = document.getElementById(activitiesElementId).innerText;
+        const speech = new SpeechSynthesisUtterance(text + " " + activities);
+        speech.lang = "en-US"; // Language
+        speech.volume = 1; // Volume (0 to 1)
+        speech.rate = 1; // Speed (0.1 to 10)
+        speech.pitch = 1; // Pitch (0 to 2)
+        window.speechSynthesis.speak(speech);
+    }
+</script>
+
+
 
 {% endblock %}
