@@ -49,3 +49,14 @@ class Option(models.Model):
 
 
 
+class Institution(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+    county = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f"{self.name} ({self.county})"
+
+class UserAnswer(models.Model):
+    user = models.ForeignKey(Signup, on_delete=models.CASCADE)
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    selected_choice = models.ForeignKey(Option, on_delete=models.CASCADE)
