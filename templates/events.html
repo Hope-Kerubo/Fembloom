@@ -1,0 +1,30 @@
+{% extends 'hf.html' %}
+{% load static %}
+
+{% block body %}
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold mt-5 text-primary">Upcoming Fembloom Events</h1>
+        <p class="lead text-muted">Join us in our mission to empower women through education, support, and advocacy for menstrual, sexual, and reproductive health.</p>
+    </div>
+
+    <div class="row">
+        {% for event in events %}
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm rounded">
+                <img src="{{ event.image.url }}" class="card-img-top" alt="{{ event.name }}">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">{{ event.name }}</h5>
+                    <p class="card-text">{{ event.description }}</p>
+                    <p class="text-muted">{{ event.date }} | {{ event.location }}</p>
+                    <form action="{% url 'sponsor_event' event.id %}" method="POST">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-success btn-block rounded-pill py-2 px-5">Sponsor This Event</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

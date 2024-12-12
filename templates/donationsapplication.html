@@ -1,0 +1,36 @@
+{% extends 'hf.html' %}
+
+{% block body %}
+<div class="container py-5">
+    <h1 class="text-center text-primary mb-4 mt-4">Apply for Donations</h1>
+
+    <!-- Display Success Messages -->
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+
+    <div class="row">
+        <!-- Institution Upload Form -->
+        <div class="col-md-6">
+            <h4 class="text-black mb-3">Add a New Institution</h4>
+            <form method="POST">
+                {% csrf_token %}
+                {{ institution_form.as_p }}
+                <button type="submit" name="add_institution" class="btn btn-primary rounded-pill px-4">Add Institution</button>
+            </form>
+        </div>
+
+        <!-- Donation Application Form -->
+        <div class="col-md-6">
+            <h4 class="text-black mb-3">Apply for Donation</h4>
+            <form method="POST">
+                {% csrf_token %}
+                {{ donation_form.as_p }}
+                <button type="submit" name="submit_donation" class="btn btn-primary rounded-pill px-4">Submit Application</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

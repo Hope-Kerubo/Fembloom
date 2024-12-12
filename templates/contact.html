@@ -1,40 +1,93 @@
 {% extends 'hf.html' %}
+{% load static %}
 
 {% block body %}
 <div class="container py-5">
-    <h1 class="text-center text-primary mb-4 mt-4">Apply for Donations</h1>
-
-    <!-- Display Success Messages -->
-    {% if messages %}
-        {% for message in messages %}
-            <div class="alert alert-success">{{ message }}</div>
-        {% endfor %}
-    {% endif %}
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold mt-5 text-primary">Upcoming Fembloom Events</h1>
+        <p class="lead text-muted">Join us in our mission to empower women through education, support, and advocacy for menstrual, sexual, and reproductive health.</p>
+    </div>
 
     <div class="row">
-
-
-        <!-- Institution Upload Form -->
-        <div class="col-md-6">
-            <h4 class="text-black mb-3">Add a New Institution</h4>
-            <form method="POST">
-                {% csrf_token %}
-                {{ institution_form.as_p }}
-                <button type="submit" name="add_institution" class="btn btn-primary rounded-pill px-4">Add Institution</button>
-            </form>
+        <!-- Event 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm rounded">
+                <img src="{% static 'images/period_health_campaign.jpg' %}" class="card-img-top" alt="Period Health Awareness Campaign">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">Period Health Awareness Campaign</h5>
+                    <p class="card-text">Educating young women and girls about menstrual health and breaking the stigma surrounding menstruation.</p>
+                    <p class="text-muted">March 2024 | Nairobi, Kenya</p>
+                    <form action="{% url 'sponsor_event' event.id %}" method="POST">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-success btn-block rounded-pill py-2 px-5">Sponsor This Event</button>
+                    </form>
+                </div>
+            </div>
         </div>
-         <!-- Donation Application Form -->
-        <div class="col-md-6">
-            <h4 class="text-black mb-3">Apply for Donation</h4>
-            <form method="POST">
-                {% csrf_token %}
-                {{ donation_form.as_p }}
-                <button type="submit" name="submit_donation" class="btn btn-primary rounded-pill px-4">Submit Application</button>
-            </form>
+
+        <!-- Event 2 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm rounded">
+                <img src="{% static 'images/sexual_health_education.jpg' %}" class="card-img-top" alt="Sexual Health Education">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">Empowering Women Through Sexual Health Education</h5>
+                    <p class="card-text">Workshops focusing on sexual health, contraception, and STI prevention to empower young women.</p>
+                    <p class="text-muted">June 2024 | Mombasa, Kenya</p>
+                    <form action="{% url 'sponsor_event' event.id %}" method="POST">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-success btn-block rounded-pill py-2 px-5">Sponsor This Event</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Event 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm rounded">
+                <img src="{% static 'images/reproductive_rights_conference.jpg' %}" class="card-img-top" alt="Reproductive Rights Conference">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">Reproductive Rights Conference</h5>
+                    <p class="card-text">Advocating for reproductive rights and safe healthcare for women across Kenya.</p>
+                    <p class="text-muted">September 2024 | Kisumu, Kenya</p>
+                    <form action="{% url 'sponsor_event' event.id %}" method="POST">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-success btn-block rounded-pill py-2 px-5">Sponsor This Event</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Event 4 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm rounded">
+                <img src="{% static 'images/gbv_support_program.jpg' %}" class="card-img-top" alt="Support for Survivors of GBV">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">Support for Survivors of Gender-Based Violence (GBV)</h5>
+                    <p class="card-text">Providing counseling and legal support to survivors of gender-based violence, empowering them to rebuild their lives.</p>
+                    <p class="text-muted">November 2024 | Eldoret, Kenya</p>
+                    <form action="{% url 'sponsor_event' event.id %}" method="POST">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-success btn-block rounded-pill py-2 px-5">Sponsor This Event</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Event 5 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm rounded">
+                <img src="{% static 'images/maternal_health_summit.jpg' %}" class="card-img-top" alt="Health Equity in Maternal Care Summit">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">Health Equity in Maternal Care Summit</h5>
+                    <p class="card-text">Addressing disparities in maternal healthcare and advocating for equal access to quality care for all women.</p>
+                    <p class="text-muted">December 2024 | Nyeri, Kenya</p>
+                    <form action="{% url 'sponsor_event' event.id %}" method="POST">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-success btn-block rounded-pill py-2 px-5">Sponsor This Event</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 {% endblock %}
-
-
-

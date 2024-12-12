@@ -52,11 +52,26 @@ class Option(models.Model):
 class Institution(models.Model):
     name = models.CharField(max_length=100, unique=True)
     county = models.CharField(max_length=100)
+    address = models.CharField(max_length=100, null=True, blank=True)
+    contact = models.CharField(max_length=100, default="Not Provided")
+
 
     def __str__(self):
         return f"{self.name} ({self.county})"
+
 
 class UserAnswer(models.Model):
     user = models.ForeignKey(Signup, on_delete=models.CASCADE)
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     selected_choice = models.ForeignKey(Option, on_delete=models.CASCADE)
+
+
+class Event(models.Model):
+    name = models.CharField(max_length=200)
+    description = models.TextField()
+    date = models.DateField()
+    location = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='event_images/')  # Optional: for event image
+
+    def __str__(self):
+        return self.name

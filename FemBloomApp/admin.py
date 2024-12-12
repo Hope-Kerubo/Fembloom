@@ -1,5 +1,5 @@
 from django.contrib import admin
-from FemBloomApp.models import Module, Quiz, Question, Option, Signup, Signin, Institution, UserAnswer
+from FemBloomApp.models import Module, Quiz, Question, Option, Signup, Signin, Institution, UserAnswer, Event
 
 
 class OptionInline(admin.TabularInline):
@@ -33,3 +33,4 @@ admin.site.register(Question)
 admin.site.register(Option)
 admin.site.register(Institution)
 admin.site.register(UserAnswer)
+admin.site.register(Event)

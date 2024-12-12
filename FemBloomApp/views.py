@@ -1,10 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Quiz, Question
+from .models import Quiz, Question, Event
 from .forms import QuizForm
 from FemBloomApp.models import Signup
 from django.contrib import messages
-from .forms import DonationApplicationForm, InstitutionForm
+from .forms import DonationApplicationForm, InstitutionForm, SponsorEventForm
 from .models import Institution
+from django.http import JsonResponse
 
 
 # Create your views here.
@@ -17,7 +18,8 @@ def modules(request):
 def about(request):
     return render(request, 'about.html')
 
-
+def contact(request):
+    return render(request, 'contact.html')
 
 def feature(request):
     return render(request, 'feature.html')
@@ -60,12 +62,6 @@ def donatemoney(request):
 def donateproducts(request):
     return render(request, 'donateproducts.html')
 
-def sponsorevents(request):
-    return render(request, 'sponsorevents.html')
-
-def selection(request):
-    return render(request, 'selection.html')
-
 def m1(request):
     return render(request, 'm1.html')
 
@@ -77,6 +73,8 @@ def m3(request):
 
 def m4(request):
     return render(request, 'm4.html')
+
+
 
 
 def quiz_detail(request, quiz_id):
@@ -133,26 +131,72 @@ def apply_donation(request):
                 # Process the donation application (e.g., save to database)
                 # Save logic can go here
                 messages.success(request, 'Donation application submitted successfully!')
-                return redirect('contact')
+                return redirect('donationsapplication')
 
         # Handle Adding a New Institution
         if 'add_institution' in request.POST:
             if institution_form.is_valid():
                 institution_form.save()
                 messages.success(request, 'Institution added successfully!')
-                return redirect('contact')
+                return redirect('donationsapplication')
 
     else:
         donation_form = DonationApplicationForm()
         institution_form = InstitutionForm()
 
-    return render(request, 'contact.html', {
+    return render(request, 'donationsapplication.html', {
         'donation_form': donation_form,
         'institution_form': institution_form,
     })
 
 
 
+def selection(request):
+    # Get all counties by fetching unique counties
+    counties = Institution.objects.values('county').distinct()
 
+    # Render the page with counties
+    return render(request, 'selection.html', {
+        'counties': counties,
+    })
+
+def get_institutions(request):
+    county = request.GET.get('county')
+    if county:
+        # Fetch institutions for the selected county
+        institutions = Institution.objects.filter(county__iexact=county)
+        institution_list = [{"name": institution.name} for institution in institutions]
+        return JsonResponse({"institutions": institution_list})
+    else:
+        return JsonResponse({"institutions": []})
+
+def upcoming_events(request):
+    events = Event.objects.all()  # Fetch all events from the database
+    return render(request, 'events.html', {'events': events})
+
+def sponsor_event(request, event_id):
+    event = get_object_or_404(Event, id=event_id)  # Get the event by its ID
+    if request.method == 'POST':
+        form = SponsorEventForm(request.POST)
+        if form.is_valid():
+            # Process the form data (e.g., save to the database, send an email)
+            sponsor_name = form.cleaned_data['sponsor_name']
+            sponsor_email = form.cleaned_data['sponsor_email']
+            donation_amount = form.cleaned_data['donation_amount']
+            message = form.cleaned_data['message']
+
+            # You can save the sponsor details to a Sponsor model or process as needed
+            # Example: Sponsor.objects.create(name=sponsor_name, email=sponsor_email, amount=donation_amount)
+
+            # Redirect to a thank you page or confirmation page
+            return redirect('thank_you')  # Redirect to a thank you page (you can create this page)
+    else:
+        form = SponsorEventForm()
+
+    return render(request, 'sponsorevents.html', {'form': form, 'event': event})
+
+
+def thank_you(request):
+    return render(request, 'thank_you.html')
 
 
