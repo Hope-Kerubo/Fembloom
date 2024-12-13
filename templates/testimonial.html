@@ -1,96 +1,89 @@
-{%  extends 'hf.html'  %}
+{% extends 'hf.html' %}
 {% load static %}
-
 
 {% block body %}
 
-      <!-- Testimonial Start -->
-        <div class="container-fluid testimonial py-5">
-            <div class="container py-5">
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
-                    <h4 class="text-primary">Testimonial</h4>
-                    <h1 class="display-5 mb-4">What Our Client Say About Us</h1>
-                    <p class="mb-0">Dolor sit amet consectetur, adipisicing elit. Ipsam, beatae maxime. Vel animi eveniet doloremque reiciendis soluta iste provident non rerum illum perferendis earum est architecto dolores vitae quia vero quod incidunt culpa corporis, porro doloribus. Voluptates nemo doloremque cum.
-                    </p>
+<!-- Testimonial Start -->
+<div class="container-fluid testimonial py-5">
+    <div class="container py-5">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
+            <h4 class="text-primary">Testimonials</h4>
+            <h1 class="display-5 mb-4">What Our Community Says About Us</h1>
+            <p class="mb-0">We are proud to share inspiring stories from individuals who have benefited from Fembloom. Their voices reflect the impact of empowering conversations, accessible resources, and support in menstrual, sexual, and reproductive health.</p>
+        </div>
+        <div class="testimonial-carousel owl-carousel wow zoomInDown" data-wow-delay="0.2s">
+            <div class="testimonial-item" data-dot="<img class='img-fluid' src='img/testimonial-img-1.jpg' alt=''>">
+                <div class="testimonial-inner text-center p-5">
+                    <div class="d-flex align-items-center justify-content-center mb-4">
+                        <div class="testimonial-inner-img border border-primary border-3 me-4" style="width: 100px; height: 100px; border-radius: 50%;">
+                            <img src="{% static 'img/testimonial-img-1.jpg' %}" class="img-fluid rounded-circle" alt="">
+                        </div>
+                        <div>
+                            <h5 class="mb-2">Emily Carter</h5>
+                            <p class="mb-0">London, UK</p>
+                        </div>
+                    </div>
+                    <p class="fs-7">"Fembloom has been a game-changer for me. The resources helped me understand my menstrual health better, and the community support made me feel less alone in my journey. Truly empowering!"</p>
+                    <div class="text-center">
+                        <div class="d-flex justify-content-center">
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                        </div>
+                    </div>
                 </div>
-                <div class="testimonial-carousel owl-carousel wow zoomInDown" data-wow-delay="0.2s">
-                    <div class="testimonial-item" data-dot="<img class='img-fluid' src='img/testimonial-img-1.jpg' alt=''>">
-                        <div class="testimonial-inner text-center p-5">
-                            <div class="d-flex align-items-center justify-content-center mb-4">
-                                <div class="testimonial-inner-img border border-primary border-3 me-4" style="width: 100px; height: 100px; border-radius: 50%;">
-                                    <img src="{% static 'img/testimonial-img-1.jpg' %}" class="img-fluid rounded-circle" alt="">
-                                </div>
-                                <div>
-                                    <h5 class="mb-2">John Abraham</h5>
-                                    <p class="mb-0">New York, USA</p>
-                                </div>
-                            </div>
-                            <p class="fs-7">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores nemo facilis tempora esse explicabo sed! Dignissimos quia ullam pariatur blanditiis sed voluptatum. Totam aut quidem laudantium tempora. Minima, saepe earum!
-                            </p>
-                            <div class="text-center">
-                                <div class="d-flex justify-content-center">
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                </div>
-                            </div>
+            </div>
+            <div class="testimonial-item" data-dot="<img class='img-fluid' src='img/testimonial-img-2.jpg' alt=''>">
+                <div class="testimonial-inner text-center p-5">
+                    <div class="d-flex align-items-center justify-content-center mb-4">
+                        <div class="testimonial-inner-img border border-primary border-3 me-4" style="width: 100px; height: 100px; border-radius: 50%;">
+                            <img src="{% static 'img/testimonial-img-2.jpg' %}" class="img-fluid rounded-circle" alt="">
+                        </div>
+                        <div>
+                            <h5 class="mb-2">Sophia Johnson</h5>
+                            <p class="mb-0">Nairobi, Kenya</p>
                         </div>
                     </div>
-                    <div class="testimonial-item" data-dot="<img class='img-fluid' src='img/testimonial-img-2.jpg' alt=''>">
-                        <div class="testimonial-inner text-center p-5">
-                            <div class="d-flex align-items-center justify-content-center mb-4">
-                                <div class="testimonial-inner-img border border-primary border-3 me-4" style="width: 100px; height: 100px; border-radius: 50%;">
-                                    <img src="{% static 'img/testimonial-img-2.jpg' %}" class="img-fluid rounded-circle" alt="">
-                                </div>
-                                <div>
-                                    <h5 class="mb-2">John Abraham</h5>
-                                    <p class="mb-0">New York, USA</p>
-                                </div>
-                            </div>
-                            <p class="fs-7">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores nemo facilis tempora esse explicabo sed! Dignissimos quia ullam pariatur blanditiis sed voluptatum. Totam aut quidem laudantium tempora. Minima, saepe earum!
-                            </p>
-                            <div class="text-center">
-                                <div class="d-flex justify-content-center">
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                </div>
-                            </div>
+                    <p class="fs-7">"Thanks to Fembloom, I now have the confidence to talk about reproductive health without feeling judged. The educational materials are simple yet impactful. Thank you for creating this safe space!"</p>
+                    <div class="text-center">
+                        <div class="d-flex justify-content-center">
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
                         </div>
                     </div>
-                    <div class="testimonial-item" data-dot="<img class='img-fluid' src='img/testimonial-img-3.jpg' alt=''>">
-                        <div class="testimonial-inner text-center p-5">
-                            <div class="d-flex align-items-center justify-content-center mb-4">
-                                <div class="testimonial-inner-img border border-primary border-3 me-4" style="width: 100px; height: 100px; border-radius: 50%;">
-                                    <img src="{% static 'img/testimonial-img-3.jpg' %}" class="img-fluid rounded-circle" alt="">
-                                </div>
-                                <div>
-                                    <h5 class="mb-2">John Abraham</h5>
-                                    <p class="mb-0">New York, USA</p>
-                                </div>
-                            </div>
-                            <p class="fs-7">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores nemo facilis tempora esse explicabo sed! Dignissimos quia ullam pariatur blanditiis sed voluptatum. Totam aut quidem laudantium tempora. Minima, saepe earum!
-                            </p>
-                            <div class="text-center">
-                                <div class="d-flex justify-content-center">
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                </div>
-                            </div>
+                </div>
+            </div>
+            <div class="testimonial-item" data-dot="<img class='img-fluid' src='img/testimonial-img-3.jpg' alt=''>">
+                <div class="testimonial-inner text-center p-5">
+                    <div class="d-flex align-items-center justify-content-center mb-4">
+                        <div class="testimonial-inner-img border border-primary border-3 me-4" style="width: 100px; height: 100px; border-radius: 50%;">
+                            <img src="{% static 'img/testimonial-img-3.jpg' %}" class="img-fluid rounded-circle" alt="">
+                        </div>
+                        <div>
+                            <h5 class="mb-2">Lila Patel</h5>
+                            <p class="mb-0">Mumbai, India</p>
+                        </div>
+                    </div>
+                    <p class="fs-7">"The information and guidance on menstrual equity shared by Fembloom inspired me to start a local initiative in my community. I’m grateful for the encouragement and practical advice!"</p>
+                    <div class="text-center">
+                        <div class="d-flex justify-content-center">
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Testimonial End -->
-
-
+    </div>
+</div>
+<!-- Testimonial End -->
 
 {% endblock %}

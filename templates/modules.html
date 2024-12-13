@@ -1,110 +1,116 @@
 {% extends 'hf.html' %}
 {% load static %}
 
-
 {% block body %}
 
-
-        <!-- Service Start -->
-        <div class="container-fluid service py-5">
-            <div class="container py-5">
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
-                    <h4 class="mb-1 text-primary">Popular Modules</h4>
+<!-- Service Start -->
+<div class="container-fluid service py-5">
+    <div class="container py-5">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
+            <h4 class="mb-1 text-primary">Popular Modules</h4>
+        </div>
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="service-item text-center rounded p-4">
+                    <div class="service-icon d-inline-block bg-light rounded p-4 mb-4"><i class="fas fa-fan fa-5x text-secondary"></i></div>
+                    <div class="service-content">
+                        <h4 class="mb-4 text-primary">Understanding your circle: Phases and Changes</h4>
+                        <p class="mb-4" style="text-align: justify">A comprehensive guide to the phases of the menstrual cycle—menstrual, follicular, ovulatory, and luteal—explaining the physical and hormonal changes at each stage.</p>
+                    </div>
+                    <a href="{% url 'm1' %}" class="btn btn-outline-pink rounded-pill py-2 px-4">Read More</a>
                 </div>
-                <div class="row g-4 justify-content-center">
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item text-center rounded p-4">
-                            <div class="service-icon d-inline-block bg-light rounded p-4 mb-4"><i class="fas fa-fan fa-5x text-secondary" ></i></div>
-                            <div class="service-content">
-                                <h4 class="mb-4 text-primary">Understanding your circle: Phases and Changes</h4>
-                                <p class="mb-4" style="text-align: justify">A comprehensive guide to the phases of the menstrual cycle—menstrual, follicular, ovulatory, and luteal—explaining the physical and hormonal changes at each stage.
-                                </p>
-                                <a href="{% url 'm1' %}" class="btn btn-light rounded-pill text-primary py-2 px-4">Read More</a>
-                            </div>
-                        </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="service-item text-center rounded p-4">
+                    <div class="service-icon d-inline-block bg-light rounded p-4 mb-4"><i class="fa fa-hand-holding-medical fa-5x text-secondary"></i></div>
+                    <div class="service-content">
+                        <h4 class="mb-4 text-primary">Managing Periods: Products (Pads, Tampons, Menstrual Cups, Period Underwear)</h4>
+                        <p class="mb-4" style="text-align: justify">Detailed insights into the various menstrual products available, their pros and cons, and tips for choosing the right product for your lifestyle and needs.</p>
                     </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="service-item text-center rounded p-4">
-                            <div class="service-icon d-inline-block bg-light rounded p-4 mb-4"><i class="fa fa-hand-holding-medical fa-5x text-secondary"></i></div>
-                            <div class="service-content">
-                                <h4 class="mb-4 text-primary">Managing Periods: Products (Pads, Tampons, Menstrual Cups, Period Underwear) </h4>
-                                <p class="mb-4" style="text-align: justify">Detailed insights into the various menstrual products available, their pros and cons, and tips for choosing the right product for your lifestyle and needs.
-                                </p>
-                                <a href="{% url 'm2' %}" class="btn btn-light rounded-pill text-primary py-2 px-4">Read More</a>
-                            </div>
-                        </div>
+                    <a href="{% url 'm2' %}" class="btn btn-outline-pink rounded-pill py-2 px-4">Read More</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="service-item text-center rounded p-4">
+                    <div class="service-icon d-inline-block bg-light rounded p-4 mb-4"><i class="fa fa-notes-medical fa-5x text-secondary"></i></div>
+                    <div class="service-content">
+                        <h4 class="mb-4 text-primary">Understanding Reproductive System Health</h4>
+                        <p class="mb-4" style="text-align: justify">An overview of how the reproductive system functions and the importance of maintaining its health through regular checkups and screenings.</p>
                     </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="service-item text-center rounded p-4">
-                            <div class="service-icon d-inline-block bg-light rounded p-4 mb-4"><i class="fa fa-notes-medical fa-5x text-secondary"></i></div>
-                            <div class="service-content">
-                                <h4 class="mb-4 text-primary">Understanding Reproductive System Health</h4>
-                                <p class="mb-4" style="text-align: justify">An overview of how the reproductive system functions and the importance of maintaining its health through regular checkups and screenings.
-                                </p>
-                                <a href="{% url 'm3' %}" class="btn btn-light rounded-pill text-primary py-2 px-4">Read More</a>
-                            </div>
-                        </div>
+                    <a href="{% url 'm3' %}" class="btn btn-outline-pink rounded-pill py-2 px-4">Read More</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="service-item text-center rounded p-4">
+                    <div class="service-icon d-inline-block bg-light rounded p-4 mb-4"><i class="fa fa-notes-medical fa-5x text-secondary"></i></div>
+                    <div class="service-content">
+                        <h4 class="mb-4 text-primary">Nutrition and Its Role in Reproductive Health</h4>
+                        <p class="mb-4" style="text-align: justify">Understanding how a balanced diet supports hormonal health, fertility, and overall well-being. Recognizing the role of essential nutrients in maintaining proper body functions and promoting a healthy reproductive system.</p>
                     </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="service-item text-center rounded p-4">
-                            <div class="service-icon d-inline-block bg-light rounded p-4 mb-4"><i class="fa fa-notes-medical fa-5x text-secondary"></i></div>
-                            <div class="service-content">
-                                <h4 class="mb-4 text-primary">Nutrition and Its Role in Reproductive Health</h4>
-                                <p class="mb-4" style="text-align: justify">Understanding how a balanced diet supports hormonal health, fertility, and overall well-being. Recognizing the role of essential nutrients in maintaining proper body functions and promoting a healthy reproductive system.
-                                </p>
-                                <a href="{% url 'm4' %}" class="btn btn-light rounded-pill text-primary py-2 px-4">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item text-center rounded p-4">
-                            <div class="service-icon d-inline-block bg-light rounded p-4 mb-4"><i class="fas fa-mail-bulk fa-5x text-secondary"></i></div>
-                            <div class="service-content">
-                                <h4 class="mb-4">Email Newsletters</h4>
-                                <p class="mb-4" style="text-align: justify">Lorem ipsum dolor sit amet consectetur adipisicing elit.consectetur adipisicing elit
-                                </p>
-                                <a href="#" class="btn btn-light rounded-pill text-primary py-2 px-4">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="service-item text-center rounded p-4">
-                            <div class="service-icon d-inline-block bg-light rounded p-4 mb-4"><i class="fas fa-food fa-5x text-secondary"></i></div>
-                            <div class="service-content">
-                                <h4 class="mb-4">Acquistion Emails </h4>
-                                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.consectetur adipisicing elit
-                                </p>
-                                <a href="#" class="btn btn-light rounded-pill text-primary py-2 px-4">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="service-item text-center rounded p-4">
-                            <div class="service-icon d-inline-block bg-light rounded p-4 mb-4"><i class="fa fa-hand-holding-medical fa-5x text-secondary"></i></div>
-                            <div class="service-icon d-inline-block bg-light rounded p-4 mb-4"><i class="fa fa-hand-holding-medical fa-5x text-secondary"></i></div>
-                            <div class="service-content">
-                                <h4 class="mb-4">Retention Emails</h4>
-                                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.consectetur adipisicing elit
-                                </p>
-                                <a href="#" class="btn btn-light rounded-pill text-primary py-2 px-4">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="service-item text-center rounded p-4">
-                            <div class="service-icon d-inline-block bg-light rounded p-4 mb-4"><i class="fas fa-suitcase-medical fa-5x text-secondary"></i></div>
-                            <div class="service-content">
-                                <h4 class="mb-4">Promotional Emails</h4>
-                                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.consectetur adipisicing elit
-                                </p>
-                                <a href="#" class="btn btn-light rounded-pill text-primary py-2 px-4">Read More</a>
-                            </div>
-                        </div>
-                    </div>
+                    <a href="{% url 'm4' %}" class="btn btn-outline-pink rounded-pill py-2 px-4">Read More</a>
                 </div>
             </div>
         </div>
-        <!-- Service End -->
+    </div>
+</div>
+<!-- Service End -->
 
+<style>
+    .service-item {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        background-color: #f4f4f4;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-content {
+        flex-grow: 1;  /* Ensures the content fills the available space */
+    }
+
+    .service-item .service-icon {
+        height: 100px; /* Fixed height for icons to ensure they align uniformly */
+        width: 100px;  /* Keep icons square */
+        margin-bottom: 20px;
+    }
+
+    .service-item .service-icon i {
+        font-size: 50px;  /* Adjust the size of the icon */
+    }
+
+    .service-item h4 {
+        font-size: 18px;
+    }
+
+    .service-item p {
+        font-size: 14px;
+        color: #555;
+    }
+
+    /* Custom pink color for the outline button */
+    .btn-outline-pink {
+        border: 2px solid #e91e63;  /* Pink border */
+        color: #e91e63;  /* Pink text color */
+        padding: 10px 20px;
+        border-radius: 30px;  /* Round the corners */
+        transition: all 0.3s ease;  /* Smooth transition */
+         font-weight: normal;
+    }
+
+    .btn-outline-pink:hover {
+        background-color: #e91e63;  /* Pink background on hover */
+        color: white;  /* White text on hover */
+        border-color: #c2185b;  /* Darker pink border on hover */
+    }
+
+    /* Responsive settings */
+    .container-fluid.service {
+        background-color: #f3f6f9;
+    }
+
+    .service-item .service-icon i {
+        color: #6c757d;
+    }
+</style>
 
 {% endblock %}

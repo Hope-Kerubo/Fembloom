@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 class Signup(models.Model):
@@ -75,3 +76,14 @@ class Event(models.Model):
 
     def __str__(self):
         return self.name
+
+class SponsorEvent(models.Model):
+    event = models.ForeignKey(Event, on_delete=models.CASCADE, default=1)  # Set default event
+    sponsor_name = models.CharField(max_length=200)
+    sponsor_email = models.EmailField(max_length=200)
+    donation_amount= models.IntegerField()
+    message = models.TextField()
+    created_at = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return self.sponsor_name

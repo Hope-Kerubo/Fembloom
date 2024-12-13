@@ -4,7 +4,7 @@ from .forms import QuizForm
 from FemBloomApp.models import Signup
 from django.contrib import messages
 from .forms import DonationApplicationForm, InstitutionForm, SponsorEventForm
-from .models import Institution
+from .models import Institution, SponsorEvent
 from django.http import JsonResponse
 
 
@@ -140,6 +140,7 @@ def apply_donation(request):
                 messages.success(request, 'Institution added successfully!')
                 return redirect('donationsapplication')
 
+
     else:
         donation_form = DonationApplicationForm()
         institution_form = InstitutionForm()
@@ -152,6 +153,12 @@ def apply_donation(request):
 
 
 def selection(request):
+    # Example: If the request is a POST (e.g., after a form submission)
+    if request.method == 'POST':
+        # Add logic here to handle form submission or any condition
+        # If a certain condition is met, redirect to the 'thank_you' page
+        return redirect('thank_you')
+
     # Get all counties by fetching unique counties
     counties = Institution.objects.values('county').distinct()
 
@@ -159,6 +166,7 @@ def selection(request):
     return render(request, 'selection.html', {
         'counties': counties,
     })
+
 
 def get_institutions(request):
     county = request.GET.get('county')
@@ -186,7 +194,11 @@ def sponsor_event(request, event_id):
             message = form.cleaned_data['message']
 
             # You can save the sponsor details to a Sponsor model or process as needed
-            # Example: Sponsor.objects.create(name=sponsor_name, email=sponsor_email, amount=donation_amount)
+            SponsorEvent.objects.create(
+                sponsor_name=sponsor_name,
+                sponsor_email=sponsor_email,
+                donation_amount=donation_amount,
+                message=message)
 
             # Redirect to a thank you page or confirmation page
             return redirect('thank_you')  # Redirect to a thank you page (you can create this page)
@@ -194,6 +206,7 @@ def sponsor_event(request, event_id):
         form = SponsorEventForm()
 
     return render(request, 'sponsorevents.html', {'form': form, 'event': event})
+
 
 
 def thank_you(request):

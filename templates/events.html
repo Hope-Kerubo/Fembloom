@@ -4,16 +4,16 @@
 {% block body %}
 <div class="container py-5">
     <div class="text-center mb-5">
-        <h1 class="display-4 fw-bold mt-5 text-primary">Upcoming Fembloom Events</h1>
+        <h1 class="display-4 fw-bold mt-5 text-dark">Upcoming Fembloom Events</h1>
         <p class="lead text-muted">Join us in our mission to empower women through education, support, and advocacy for menstrual, sexual, and reproductive health.</p>
     </div>
 
     <div class="row">
         {% for event in events %}
         <div class="col-md-4 mb-4">
-            <div class="card shadow-sm rounded">
-                <img src="{{ event.image.url }}" class="card-img-top" alt="{{ event.name }}">
-                <div class="card-body">
+            <div class="card shadow-sm rounded h-100">
+                <img src="{{ event.image.url }}" class="card-img-top event-image" alt="{{ event.name }}">
+                <div class="card-body d-flex flex-column">
                     <h5 class="card-title text-primary">{{ event.name }}</h5>
                     <p class="card-text">{{ event.description }}</p>
                     <p class="text-muted">{{ event.date }} | {{ event.location }}</p>
@@ -27,4 +27,32 @@
         {% endfor %}
     </div>
 </div>
+
+<style>
+    /* Ensures the images are all the same height and maintain aspect ratio */
+    .event-image {
+        height: 200px; /* Adjust this height as needed */
+        object-fit: cover; /* Ensures the image is cropped to fit the container */
+    }
+
+    /* Flexbox to ensure the card body expands equally */
+    .card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-body {
+        flex-grow: 1;  /* Ensures the body expands to take the available space */
+    }
+
+    /* Optional: This can ensure all cards have the same height */
+    .card {
+        height: 100%;
+    }
+
+    .card-body {
+        min-height: 150px;  /* You can set a minimum height for the card body */
+    }
+</style>
+
 {% endblock %}

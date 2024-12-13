@@ -1,6 +1,6 @@
 from django import forms
 from .models import Question, Option
-from .models import Institution
+from .models import Institution, SponsorEvent
 
 
 class QuizForm(forms.Form):
@@ -62,11 +62,16 @@ class InstitutionForm(forms.ModelForm):
             'contact': forms.TextInput(attrs={'class': 'form-control','placeholder': 'Enter Contact'}),
         }
 
-class SponsorEventForm(forms.Form):
-    sponsor_name = forms.CharField(max_length=100, label='Your Name', widget=forms.TextInput(attrs={'class': 'form-control'}))
-    sponsor_email = forms.EmailField(label='Your Email', widget=forms.EmailInput(attrs={'class': 'form-control'}))
-    donation_amount = forms.DecimalField(label='Donation Amount', max_digits=10, decimal_places=2, widget=forms.NumberInput(attrs={'class': 'form-control'}))
-    message = forms.CharField(required=False, widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 4}), label='Message to the Event Organizers')
+class SponsorEventForm(forms.ModelForm):
+    class Meta:
+        model = SponsorEvent
+        fields = ['sponsor_name', 'sponsor_email', 'donation_amount', 'message']
+        widgets = {
+            'sponsor_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'sponsor_email': forms.EmailInput(attrs={'class': 'form-control'}),
+            'donation_amount': forms.NumberInput(attrs={'class': 'form-control'}),
+            'message': forms.Textarea(attrs={'class': 'form-control', 'rows': 4}),
+        }
 
     def clean_donation_amount(self):
         amount = self.cleaned_data['donation_amount']
